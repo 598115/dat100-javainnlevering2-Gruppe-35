@@ -89,14 +89,17 @@ String tabellVerdier = "";
 		return funnet;	
 	}
 
-	// e) FERDIG ////////////////////////////////////////////////////////////////////////////
+	// e) FERDIG  ////////////////////////////////////////////////////////////////////////////
 	public static int posisjonTall(int[] tabell, int tall) {
-
-	    int posisjon = 0;	
+		
+		int posisjon = 0;	
 		boolean funnet = false;	
 		int i = 0;
 		
-		while ((funnet != true)&&(i<tabell.length)) {
+ if (!(tabell.length == 0)) {
+	 
+ 
+		while (!(funnet == true)&&(i<tabell.length)) {
 			
 		      if (tabell[i] == tall) {
 		    	  funnet = true;
@@ -104,12 +107,16 @@ String tabellVerdier = "";
 			     if (funnet == true) {
 			    	 posisjon = i;
 			     } else posisjon = -1;
-			i++;
-	     }	
+			 i++;
+	     }					
+  }    	 
+  
+  else posisjon = -1;
+	     	
 		
 		return posisjon; 
-		
 	}
+	
 
 	// f) FERDIG ////////////////////////////////////////////////////////////////////////////
 	
@@ -148,14 +155,17 @@ String tabellVerdier = "";
 		
 	int tabellKomb[] = new int[tabell1.length + tabell2.length];
 	int j = 0;
-		    
-		    for (int i = 0; i<tabellKomb.length; i+=2) {
-		    	
-		    	tabellKomb[j] = tabell1[j];
-		    	tabellKomb[j+tabell1.length] = tabell2[j];
-		    	
-		    	j++;
-             }
+			    
+	   while ((j<tabell1.length)||(j<tabell2.length)) {
+			    	
+		  if(j<tabell1.length) {	
+			       tabellKomb[j] = tabell1[j];
+		   }
+			    if(j<tabell2.length) {
+			    	tabellKomb[j+tabell1.length] = tabell2[j];
+			    }
+	       j++;        
+      }  
 	return tabellKomb;	    
  }
 }	
