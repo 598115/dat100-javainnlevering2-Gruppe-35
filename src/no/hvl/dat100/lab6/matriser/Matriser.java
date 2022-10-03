@@ -12,8 +12,22 @@ public class Matriser {
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("tilStreng ikke implementert");
+		String print = "";
+		int j = 0;
+		
+		while (j<matrise.length) {
+			
+				int[] tabell = matrise[j];																		
+			
+				for (int i = 0; i<tabell.length; i++) { 
+					
+				     print += tabell[i] + " ";
+			     } 
+				print += "\n";
+				j++;
+		}
+				
+				return print;
 		
 	}
 
